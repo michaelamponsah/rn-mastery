@@ -16,7 +16,7 @@ const ListingDetailsScreen = () => {
           <ListItem
             image={require("../assets/mike.jpg")}
             title="Michael Amponsah"
-            subtitle="5 Listings"
+            subTitle="5 Listings"
           />
         </View>
       </View>
