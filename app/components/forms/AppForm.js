@@ -1,6 +1,5 @@
 import React from "react";
 import { Formik } from "formik";
-import * as Yup from "yup";
 
 const AppForm = ({ initialValues, onSubmit, validationSchema, children }) => {
   return (

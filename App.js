@@ -2,8 +2,10 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-import LoginScreen from "./app/screens/LoginScreen";
+import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
+// import ListingEditScreen from "./app/screens/ListingEditScreen";
 
 export default function App() {
-  return <LoginScreen />;
+  return <ListingDetailsScreen />;
+  // return <ListingEditScreen />;
 }

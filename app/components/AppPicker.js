@@ -4,7 +4,6 @@ import {
   View,
   TouchableOpacity,
   Modal,
-  Button,
   FlatList,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -13,6 +12,7 @@ import defaultStyles from "../config/styles";
 import AppText from "./AppText";
 import PickerItem from "./PickerItem";
 import Screen from "./Screen";
+import AppButton from "./AppButton";
 
 const AppPicker = ({
   icon,
@@ -37,9 +37,11 @@ const AppPicker = ({
               style={styles.icon}
             />
           )}
-          <AppText style={styles.text}>
-            {selectedItem ? selectedItem.label : placeholder}
-          </AppText>
+          {selectedItem ? (
+            <AppText style={styles.text}>{selectedItem.label}</AppText>
+          ) : (
+            <AppText style={styles.placeholder}>{placeholder}</AppText>
+          )}
           <MaterialCommunityIcons
             name="chevron-down"
             size={20}
@@ -49,7 +51,11 @@ const AppPicker = ({
       </TouchableOpacity>
       <Modal visible={modalVisible} animationType="slide">
         <Screen>
-          <Button title="close" onPress={() => setModalVisible(false)} />
+          <AppButton
+            color="secondary"
+            onPress={() => setModalVisible(false)}
+            title="Close"
+          />
           <FlatList
             data={items}
             keyExtractor={(item) => item.value.toString()}
@@ -81,6 +87,10 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginRight: 10,
+  },
+  placeholder: {
+    color: defaultStyles.colors.medium,
+    flex: 1,
   },
   text: {
     flex: 1,
