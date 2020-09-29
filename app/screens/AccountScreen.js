@@ -23,7 +23,7 @@ const AccountScreen = () => {
       <View style={styles.container}>
         <ListItem
           title="Michael Amponsah"
-          subTitle="amponsahmichaelkwame@gmail.com"
+          subtitle="amponsahmichaelkwame@gmail.com"
           image={require("../assets/mike.jpg")}
         />
       </View>
@@ -33,6 +33,7 @@ const AccountScreen = () => {
           keyExtractor={(menuItem) => menuItem.title}
           renderItem={({ item }) => (
             <ListItem
+              showChevron
               title={item.title}
               IconComponent={
                 <Icon

@@ -4,7 +4,7 @@ import { useFormikContext } from "formik";
 import AppErrorMessage from "./AppErrorMessage";
 import AppTextInput from "../AppTextInput";
 
-const AppFormField = ({ name, ...otherProps }) => {
+const AppFormField = ({ name, width, ...otherProps }) => {
   const { errors, handleChange, setFieldTouched, touched } = useFormikContext();
   return (
     <React.Fragment>
@@ -15,6 +15,7 @@ const AppFormField = ({ name, ...otherProps }) => {
         }}
         onChangeText={handleChange(name)}
         {...otherProps}
+        width={width}
       />
     </React.Fragment>
   );
