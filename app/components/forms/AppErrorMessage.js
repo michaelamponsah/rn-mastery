@@ -13,7 +13,6 @@ const AppErrorMessage = ({ error, visible }) => {
 };
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#ffe5f5",
     height: 35,
     justifyContent: "center",
   },
